@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Upcoming Movie</string>
+    <string name="poster_image">Poster Image</string>
+    <string name="overview">ovierview</string>
+    <string name="title">Title</string>
+    <string name="developed">Developed by</string>
+    <string name="name">Shrikant Ingole</string>
+</resources>
