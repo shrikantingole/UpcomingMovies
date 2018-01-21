@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import shrikant.com.upcomingmovie.Adapter.ViewPageAdapter;
+import shrikant.com.upcomingmovie.Config.Config;
 import shrikant.com.upcomingmovie.R;
 
 public class MovieDetails extends AppCompatActivity {
@@ -86,7 +87,7 @@ public class MovieDetails extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> param=new HashMap<>();
-                param.put("api_key","b7cd3340a794e5a2f35e3abb820b497f");
+                param.put("api_key",new Config().getApiKey());
                 return param;
             }
         };

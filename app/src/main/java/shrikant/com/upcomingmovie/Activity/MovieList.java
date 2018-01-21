@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import shrikant.com.upcomingmovie.Adapter.Adapterclass;
+import shrikant.com.upcomingmovie.Config.Config;
 import shrikant.com.upcomingmovie.Model_Class.Movie;
 import shrikant.com.upcomingmovie.R;
 
@@ -39,8 +40,7 @@ ArrayList<Movie> result;
             pb=(ProgressBar)findViewById(R.id.pd);
             pb.setVisibility(View.VISIBLE);
             movieListView=(ListView)findViewById(R.id.list) ;
-            String Url="https://api.themoviedb.org/3/movie/upcoming";
-            Volly(Url);
+            Volly(new Config().getUpcomingMovieList());
         movieListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -76,7 +76,7 @@ ArrayList<Movie> result;
             protected Map<String, String> getParams()
             {
                 Map<String,String> param=new HashMap<>();
-                param.put("api_key","b7cd3340a794e5a2f35e3abb820b497f");
+                param.put("api_key",new Config().getApiKey());
                 return param;
             }
         };

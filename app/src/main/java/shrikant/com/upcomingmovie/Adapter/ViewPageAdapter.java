@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import shrikant.com.upcomingmovie.Config.Config;
 import shrikant.com.upcomingmovie.R;
 
 /**
@@ -48,7 +49,7 @@ public class ViewPageAdapter extends PagerAdapter {
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
         //imageView.setImageResource(images[position]);
 
-        Picasso.with(context).load("https://image.tmdb.org/t/p/w300/"+poster.get(position))
+        Picasso.with(context).load(new Config().getPosterImages()+poster.get(position))
                 .placeholder(R.drawable.loading)
                 .error(R.drawable.error)
                 .resize(100, 100).centerCrop()
